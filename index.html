@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html>
+<meta charset='UTF-8'/><meta content='width=device-width, initial-scale=1, user-scalable=1, minimum-scale=1, maximum-scale=5' name='viewport'/><meta content='IE=edge' http-equiv='X-UA-Compatible'/>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Shippori+Antique:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.all.min.js"></script><link href="https://feeldreams.github.io/heibuka/style.css" rel="stylesheet" type="text/css" />
+  <script src="https://unpkg.com/typeit@8.7.0/dist/index.umd.js"></script>
+  <style>
+  /* Hiệu ứng kính mờ cho khung chữ */
+  #bq {
+    background: rgba(255, 255, 255, 0.15) !important;
+    backdrop-filter: blur(8px) !important;
+    border-radius: 20px !important;
+    border: 1px solid rgba(255,255,255,0.3) !important;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1) !important;
+  }
+
+  /* Làm chữ phát sáng nhẹ mộng mơ */
+  #kalimat, .sty2, #pesan1, #pesan2, #pesan3, #pesan4, #pesan5, #pesan6 {
+    text-shadow: 1px 1px 5px rgba(255, 105, 180, 0.8) !important;
+    color: #fff !important;
+  }
+
+  /* Đổi màu tên bạn nữ cho nổi bật với font chữ nghệ thuật */
+  .halo {
+    font-family: 'Dancing Script', cursive !important;
+    font-size: 2.5rem !important;
+    color: #ffb3c6 !important;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5) !important;
+  }
+  
+  /* Làm đẹp nút bấm */
+  #Tombol a {
+    background: linear-gradient(45deg, #ff758c 0%, #ff7eb3 100%) !important;
+    border-radius: 25px !important;
+    box-shadow: 0 4px 15px rgba(255, 117, 140, 0.4) !important;
+    border: none !important;
+  }
+</style>
+<head>
+<title>Mylove</title>
+<link rel="icon" type="image/x-icon" href="https://www.palingit.com/favicon.ico">
+<meta name="description" content="HTML Replit Coding">
+</head>
+<body>
+	
+  
+   <audio src="music.mp3" id="linkmp3" class="sembunyi"></audio>
+   
+   <div id="bodyblur">
+    <img src="image.png" id="wallpaper"/>
+   </div>
+   
+   <div id='Content'>
+
+     <div id="kadoIn">
+       <!-- Tombol Surat --><img src="https://feeldreams.github.io/kadoin.png"/>
+     </div>
+     <p id="ket">Ấn vào đi bé iuu 🌷</p>
+
+     <div class="kumpulanstiker">
+         <!-- Stiker untuk Konten -->
+         <img src="https://feeldreams.github.io/peach6.gif" id="fotostiker"/>
+         <img src="https://feeldreams.github.io/bunga.gif" id="fotostiker1"/>
+         <img src="https://feeldreams.github.io/pandacoklat.gif" id="fotostiker2"/>
+         <img src="https://feeldreams.github.io/gumush.gif" id="fotostiker3"/>
+         <img src="https://feeldreams.github.io/emawh.gif" id="fotostiker4"/>
+         
+         <img src="https://feeldreams.github.io/pandacoklat.gif" id="fotostiker5"/>
+     </div>
+     
+     <p id="halo" class="halo"></p>
+     
+     <div><blockquote id='bq' data-text='💞'>
+       <p id="kalimat">Anh có điều này muốn nói... 💞 👉👈</p>
+
+       <p id="pesan1">Chào bé iu ❤️</p>
+       <div id="kolombaru">
+         <li id="lv1"> ❤️</li>
+         <li id="lv2"> ❤️</li>
+         <li id="lv3"> ❤️</li>
+         <li id="lv4"> ❤️</li>
+       </div>
+
+       <p id="pesan2">Cảm ơn em vì đã cho phép anh được tìm hiểu em. 💘</p>
+       <p id="pesan3">Anh đã rất vui vì chúng ta đã tìm thấy nhau giữa hàng triệu người.</p>
+       <p id="pesan4" class="sty2">Anh hy vọng chúng mình sẽ ở bên cạnh nhau thật lâu, 
+        vì anh không biết liệu mình có thể mở lòng thêm một lần nào nữa không.</p>
+       <p id="pesan5" class="sty2">Anh không quan tâm liệu tình yêu sẽ phức tạp đến mức nào.
+        - Dù thế nào đi nữa anh vẫn luôn muốn được ở bên cạnh em mỗi ngày....💑</p>  
+       <p id="pesan6" class="sty2">Làm người yêu anh nhé? 💞</p>
+
+       <p id="opsL">Tiếp tục nào ❤️</p>
+     </blockquote></div>
+
+     <!-- Tombol Kirim Pesan -->
+     <div id="Tombol"><a id="By">&#128140; Click</a></div>
+     
+     <!-- Pesan Ditolak -->
+     <div id="pesanditolak">
+       <img id="stikerditolak" src="https://feeldreams.github.io/weee.gif"/>
+       <p id="kataditolak">Đừng như vậy mòoo 🥹🥹</p>
+     </div>
+
+   </div>
+
+<script>
+  const body = document.querySelector("body");
+  const swalst = Swal.mixin({timer: 2300, allowOutsideClick: false, showConfirmButton: false, timerProgressBar: true, imageHeight: 90}); 
+  audio = new Audio('' + linkmp3.src); 
+  ftganti=0; fungsi=0; fungsiAwal=0; deffotostiker=fotostiker.src; Content.style = "opacity:1;margin-top:16vh"; 
+  const swals = Swal.mixin({allowOutsideClick: false, cancelButtonColor: '#FF0040', imageHeight: 80}); 
+
+  document.getElementById("kadoIn").onclick = function() {
+    if(fungsiAwal==0){
+      audio.play();
+      fungsiAwal=1;
+      kadoIn.style="transition:all .8s ease;transform:scale(10);opacity:0";
+      wallpaper.style="transform: scale(1.5);";
+      ket.style="display:none";
+      setTimeout(initengahan,300);
+      setTimeout(inipesan,500);
+    }
+  }
+  
+  async function inipesan(){
+    var { value: nama } = await swals.fire({
+           title: 'Tên của bé iuu là gì?', input: 'text',
+       });
+       if(nama && nama.length < 11){
+         window.nama = nama;
+         vketikhalo="MY LOVE, " + nama + " 💑";
+         mulainama();
+       } else {
+           await swals.fire('Phải là béiu của tui cơ !!');
+           inipesan();
+       }
+  }
+
+  // ==== LOGIC VÒNG LẶP TRÔN TRÔN ====
+  var tanya ='Mãi bên nhau nhó 🥹';
+  var opstanya = 'Lựa chọn của em là......';
+  var tompositif = 'Em đồng ý';
+  var tomnegatif = 'Em hông chịu';
+  
+  var countTroll = 0; // Đếm số lần từ chối
+
+  async function pertanyaan(){
+    var { isConfirmed: prtanya } = await swals.fire({
+      title: nama + ' ơi, ' + tanya, 
+      text: '' + opstanya, 
+      imageUrl: '' + fotostiker5.src, 
+      showCancelButton: true, 
+      confirmButtonText: '' + tompositif, 
+      cancelButtonText: '' + tomnegatif,
+      allowOutsideClick: false // Chặn bấm ra ngoài
+    });
+
+    if(prtanya){
+      // NẾU BẤM ĐỒNG Ý
+      pesanwhatsapp = "Dạ, " + nama + " đồng ý làm người yêu anh rồi nè ><";
+      menuju();
+    } else {
+      // NẾU BẤM TỪ CHỐI
+      countTroll++;
+      let textTroll = "";
+      
+      if (countTroll === 1) {
+        textTroll = "Ê kìa, bấm nhầm đúng hong? 🥺 Mờ mắt rồi chọn lại điii!";
+      } else if (countTroll === 2) {
+        textTroll = "Vẫn cố tình bấm 'Hông chịu' hả? 😤 Giận á nha!";
+      } else if (countTroll === 3) {
+        textTroll = "Nút này bị hỏng rồi bé ơi, không thoát được đâu 😎";
+      } else if (countTroll === 4) {
+        textTroll = "Ngoan nào, bấm nút 'Em đồng ý' đi mờ! 💖";
+      } else {
+        textTroll = "Trái tim anh đau rỉ máu... Đồng ý đi cho anh nhờ 😭";
+      }
+
+      await swals.fire({
+        title: textTroll, 
+        imageUrl: 'https://feeldreams.github.io/weee.gif', // Cảnh báo dỗi hờn
+        confirmButtonText: 'Dạ để em chọn lại 🙄',
+        allowOutsideClick: false
+      });
+      
+      // Gọi lại chính hàm này để lặp lại câu hỏi
+      pertanyaan();
+    }
+  }
+</script>
+
+<script>
+  // Script tạo mưa trái tim và hoa tulip
+  function createHeart() {
+    const heart = document.createElement('div');
+    heart.innerHTML = '💖'; 
+    heart.style.position = 'fixed';
+    heart.style.top = '-5vh';
+    heart.style.left = Math.random() * 100 + 'vw';
+    heart.style.fontSize = Math.random() * 20 + 10 + 'px';
+    heart.style.animation = `fall ${Math.random() * 3 + 3}s linear forwards`;
+    heart.style.zIndex = '9999';
+    heart.style.opacity = Math.random();
+    document.body.appendChild(heart);
+
+    setTimeout(() => { heart.remove(); }, 5000);
+  }
+  
+  function createHeart1() {
+    const heart = document.createElement('div');
+    heart.innerHTML = '🌷'; 
+    heart.style.position = 'fixed';
+    heart.style.top = '-5vh';
+    heart.style.left = Math.random() * 100 + 'vw';
+    heart.style.fontSize = Math.random() * 20 + 10 + 'px';
+    heart.style.animation = `fall ${Math.random() * 3 + 3}s linear forwards`;
+    heart.style.zIndex = '9999';
+    heart.style.opacity = Math.random();
+    document.body.appendChild(heart);
+
+    setTimeout(() => { heart.remove(); }, 5000);
+  }
+
+  setInterval(createHeart, 300);
+  setInterval(createHeart1, 300);
+
+  // Thêm keyframe animation cho trái tim
+  const style = document.createElement('style');
+  style.innerHTML = `
+    @keyframes fall {
+      to { transform: translateY(105vh) rotate(360deg); }
+    }
+  `;
+  document.head.appendChild(style);
+</script>
+
+<script src="a.js"></script>
+
+</body>
+</html>
